@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Board de tarefas</title>
+  </head>
+  <body>
+    <main id="board-container">
+      <header>
+        <h1>Board de tarefas</h1>
+      </header>
+      <section id="form-container">
+        <form id="form-inputs">
+          <input
+            for="nome"
+            type="text"
+            placeholder="Digite o nome da tarefa"
+            required
+            autocomplete="off"
+            id="nome"
+          />
+          <input
+            for="etiqueta"
+            type="text"
+            placeholder="Etiqueta"
+            required
+            autocomplete="off"
+            id="etiqueta"
+          />
+          <button type="submit">+</button>
+        </form>
+      </section>
+      <section id="tasks-list"></section>
+      <div id="counter-tasks"></div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+html{
+    font-family:"Rubik", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:#F5F9FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    width: 100%;
+}
+input{
+    width: 11rem;
+    height: 2rem;
+    border: solid 2px;
+    border-color: #B1BACB;
+    border-radius: 10px;
+    padding-left: 8px;
+}
+input::placeholder{
+    color:#B1BACB;
+    padding-left: 3%;
+}
+#board-container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 72vh;
+    height: 72vh;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+#form-container{
+    display: flex;
+    align-items: center;
+    width:auto;
+}
+#form-inputs{
+    display: flex;
+    gap: 8px;
+}
+#form-container button{
+    background-color: #2D70FD;
+    border: none;
+    border-radius: 5px;
+    width: 2.1rem;
+    height: 2.1rem;
+    color: white;
+    font-weight: 900;
+    padding: 0;
+}
+#tasks-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 68%;
+    height: 70%;
+    align-items: center;
+    gap:8px;
+    overflow-y: scroll;
+}
+.task{
+    display: flex;
+    border:solid 2px;
+    border-color:  #eeee;
+    border-radius: 8px;
+    width:90%;
+    height: 4.5rem;
+    justify-content: space-between;
+    box-sizing: content-box;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(206, 206, 206, 0.1);
+}
+.task button{
+    background-color: #2D70FD;
+    border: none;
+    color: white;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 5px;
+}
+.task-text h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+.task-etiqueta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.task-etiqueta p{
+    border: solid 2px  #B1BACB;
+    border-radius:20px;
+    text-align: center;
+    padding: 5px;
+    font-size:12px;
+    color: #B1BACB;
+    width: fit-content;
+    font-weight: 500;
+}
+.task-etiqueta small{
+    color: #B1BACB;
+}
+.concluida h3{
+    text-decoration: line-through;
+    color: #B1BACB;
+}
+.concluida p{
+    text-decoration: line-through;
+    color: #B1BACB;
+}
+
+.concluida button{
+    background-color: #00E0B8; 
+    border: none;
+    color: white;
+    font-size: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.concluir-btn:hover {
+    background-color: #00cba3; 
+}
+#counter-tasks{
+    width: 100%;
+    text-align: right;
+    position: absolute; 
+    bottom: 2%;
+    margin-right: 50px;     
+    color: #A0A0A0;   
+    font-size: 14px;   
+    font-weight: 500;     
+}
+@media screen and (max-width: 700px) {
+    #board-container{
+        width: 50dvh;
+        height: 90dvh;
+    }
+    #form-inputs{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    input{
+        width: 19rem;
+        height: 2rem;
+    }
+    #form-container button{
+        width: 19rem;
+        height: 2rem;
+        margin: 0;
+    }
+    #tasks-list{
+        width: 75%;
+    }
+    .task{
+        width: 82%;
+        height: 4rem;
+    }
+}
+@media screen and (max-width: 550px){
+    h1{
+        font-size: 20px;
+    }
+    #board-container{
+        width: 30dvh;
+        height: 70dvh;
+    }
+    input{
+        width: 9.5rem;
+        height: 1.5rem;
+    }
+    #form-container button{
+        width: 10rem;
+        height: 1.5rem;
+        margin: 0;
+    }
+    #tasks-list{
+        width: 70%;
+        height: 65%;
+        
+    }
+    .task{
+        display: flex;                
+        flex-direction: column;       
+        justify-content: space-between; 
+        width: 82%;
+        height: 6rem;                
+        padding: 0.5rem;             
+        border: 1px solid #ccc;       
+        border-radius: 8px;           
+        background-color: #fff;       
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .task-text{
+        height:auto;
+    }
+    .task-etiqueta{
+        font-size: 12px;
+    }
+    .task button{
+        width: 3rem;
+        height: 1.7rem;
+        font-size: 8px;
+        font-size: 8px;
+        font-weight: 500;
+    }
+   
+    .task-text h3{
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
