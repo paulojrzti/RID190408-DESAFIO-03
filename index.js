@@ -61,6 +61,6 @@ function addtask (task){
 }
 
 function updateCompletedCounter() {
-    counterTasks.textContent = `${completedTasks} Tarefas concluídas`;
+    counterTasks.textContent = `${completedTasks} tarefas concluídas`;
 }
 
