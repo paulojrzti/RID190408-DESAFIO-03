@@ -22,15 +22,7 @@ JavaScript: Lógica para manipulação de tarefas e interatividade.
 
 📦 Como Usar
 
-Clone o repositório:
-
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-
-Abra o arquivo index.html em seu navegador.
-
-Adicione suas tarefas preenchendo o nome e a etiqueta e clique em +.
-
-Clique no botão Concluir para marcar uma tarefa como finalizada.
+link do deploy:(https://boarddetarefasdnc.netlify.app/)
 
 📋 Estrutura do Projeto
 
