@@ -39,10 +39,13 @@ input::placeholder{
 #form-container{
     display: flex;
     align-items: center;
+    justify-content: center;
     width:auto;
 }
 #form-inputs{
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
 }
 #form-container button{
