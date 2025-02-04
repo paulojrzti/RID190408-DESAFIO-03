@@ -9,14 +9,19 @@ form.addEventListener("submit", (event) => {
   newtask();
 });
 
-function newtask(event) {
-  const dateNow = new Date();
-
-  const dateTimeFormatted = dateNow.toLocaleString("pt-BR", {
+function getDateFormatted(date) {
+  const dateTimeFormatted = date.toLocaleString("pt-BR", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
   });
+
+  return dateTimeFormatted;
+}
+
+function newtask(event) {
+  const dateNow = new Date();
+  const dateTimeFormatted = getDateFormatted(dateNow);
 
   const task = {
     nome: document.getElementById("nome").value,
@@ -38,11 +43,7 @@ function clearform() {
 }
 
 function addTask(task, index) {
-  const dateTimeFormatted = task.dataHora.toLocaleString("pt-BR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  });
+  const dateTimeFormatted = getDateFormatted(task.dataHora);
 
   const taskElement = document.createElement("div");
   taskElement.classList.add("task");
