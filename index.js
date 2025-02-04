@@ -1,4 +1,16 @@
-let tasks = []; //lista de tarefas
+/**
+ * Array que armazena a lista de tarefas.
+ * @type {Array<Object>}
+ */
+let tasks = [];
+
+/**
+ * @typedef {Object} Task
+ * @property {string} nome - O nome da tarefa.
+ * @property {string} etiqueta - A etiqueta associada à tarefa.
+ * @property {string} dataHora - A data e hora formatadas da tarefa.
+ * @property {boolean} concluido - Indica se a tarefa foi concluída.
+ */
 
 const counterTasks = document.getElementById("counter-tasks");
 const form = document.getElementById("form-inputs");
@@ -9,6 +21,11 @@ form.addEventListener("submit", (event) => {
   newtask();
 });
 
+/**
+ * Formata uma data para o padrão brasileiro (dd/mm/aaaa).
+ * @param {Date} date - A data a ser formatada.
+ * @returns {string} - A data formatada.
+ */
 function getDateFormatted(date) {
   const dateTimeFormatted = date.toLocaleString("pt-BR", {
     day: "2-digit",
@@ -19,6 +36,11 @@ function getDateFormatted(date) {
   return dateTimeFormatted;
 }
 
+/**
+ * Cria uma nova tarefa com base nos valores do formulário e a adiciona à lista de tarefas.
+ * e também adiciona a tarefa ao local storage.
+ * @param {Event} event - O evento de submit do formulário.
+ */
 function newtask(event) {
   const dateNow = new Date();
   const dateTimeFormatted = getDateFormatted(dateNow);
@@ -37,11 +59,19 @@ function newtask(event) {
   addTask(task, tasks.length - 1);
 }
 
+/**
+ * Limpa os campos do formulário após a adição de uma nova tarefa.
+ */
 function clearform() {
   document.getElementById("nome").value = "";
   document.getElementById("etiqueta").value = "";
 }
 
+/**
+ * Adiciona uma tarefa ao container de tarefas na interface do usuário.
+ * @param {Task} task - A tarefa a ser adicionada.
+ * @param {number} index - O índice da tarefa na lista de tarefas.
+ */
 function addTask(task, index) {
   const dateTimeFormatted = getDateFormatted(task.dataHora);
 
@@ -82,6 +112,9 @@ function addTask(task, index) {
   });
 }
 
+/**
+ * Carrega as tarefas salvas no localStorage e as exibe na interface do usuário.
+ */
 function loadTasks() {
   const tasksInStorage = JSON.parse(localStorage.getItem("tasks"));
   tasks = [...tasksInStorage];
@@ -93,8 +126,11 @@ function loadTasks() {
   updateCompletedCounter();
 }
 
+/**
+ * Atualiza o contador de tarefas concluídas na interface do usuário.
+ */
 function updateCompletedCounter() {
-  let completedTasks = 0; //quantidade de tarefas concluidas
+  let completedTasks = 0;
 
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i].concluido === true) {
